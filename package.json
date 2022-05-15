@@ -1,0 +1,24 @@
+{
+  "name": "makecord",
+  "version": "1.0.3",
+  "config": {
+    "stable": "1.0.3",
+    "beta": "1b"
+  },
+  "description": "An advanced Discord Bot scaffolder",
+  "main": "index.js",
+  "author": "SirTenzin",
+  "license": "MIT",
+  "bin": {
+    "makecord": "index.js"
+  },
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "clear": "^0.1.0",
+    "colours": "^0.6.0-2",
+    "commander": "^9.2.0",
+    "figlet": "^1.5.2",
+    "inquirer": "^8.2.4",
+    "nconf": "^0.12.0"
+  }
+}
