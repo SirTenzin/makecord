@@ -37,5 +37,8 @@
     "discord buttons",
     "slappey",
     "create-discord-app"
-  ]
+  ],
+  "devDependencies": {
+    "release-it": "^15.0.0"
+  }
 }

@@ -1,6 +1,11 @@
 # ✨ Makecord | An advanced Discord bot scaffolder.
 
-<img src="https://img.shields.io/npm/dm/makecord.svg">
+<img src="https://i.ibb.co/4tMV0LV/cover.png">
+
+<p align="center">
+    <img style="display: block:" src="https://img.shields.io/npm/dm/makecord.svg">
+    <img style="display: block:" src="https://hits.link/hits?url=https://github.com/SirTenzin/makecord">
+</p>
 
 Makecord is a rather advanced Discord bot project scaffolder to kickstart your project off its feet.
 Note: It is not a Discord bot or provide any commands!
