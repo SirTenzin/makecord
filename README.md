@@ -2,11 +2,6 @@
 
 <img src="https://i.ibb.co/4tMV0LV/cover.png">
 
-<p align="center">
-    
-    <img style="display: block:" src="">
-</p>
-
 Makecord is a rather advanced Discord bot project scaffolder to kickstart your project off its feet.
 Note: It is not a Discord bot or provide any commands!
 
