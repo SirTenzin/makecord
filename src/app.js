@@ -120,6 +120,72 @@ module.exports = class app {
                 })
             }
         })
+
+        program.command("create <type>")
+        .description("create a new command or event")
+        .option("type", "'event' or 'command'")
+        .action(async type => {
+            if(type == "command") {
+                var isMakecordProject = fs.existsSync(path.join(process.cwd(), "/.makecord"))
+                if(!isMakecordProject) return Logger.error("this is not a makecord project!")
+                else {
+                    inquirer.prompt([
+                        {
+                            "message": "what is the command's name",
+                            "type": "input",
+                            "name": "commandName",
+                            validate: (x) => { return !(!x) }
+                        }, {
+                            "message": "what is the command's description",
+                            "type": "input",
+                            "name": "commandDescription",
+                            validate: (x) => { return !(!x) }
+                        }, {
+                            "name": "type",
+                            "message": "what is the command's type (slash or text)",
+                            "type": "list",
+                            "choices": [
+                                "slash",
+                                "text"
+                            ]
+                        }
+                    ]).then(async (answers) => {
+                        if(answers.type == "text") {
+                            inquirer.prompt([
+                                {
+                                    "message": "what is the command's category",
+                                    "type": "input",
+                                    "name": "category",
+                                    validate: (x) => { return !(!x) }
+                                }
+                            ]).then(async a2 => {
+                                if(a2.category) {
+                                    var catexists = fs.existsSync(path.join(process.cwd(), `src/commands/${a2.category}`))
+                                    if(catexists) {
+                                        var text = require("./template")[answers.type](answers.commandName, answers.commandDescription)
+                                        fs.writeFile(path.join(process.cwd(), `src/commands/${a2.category}/${this.capitalizeFirstLetter(answers.commandName)}Command.js`), text, (err) => {
+                                            if(err) return Logger.error(err.message)
+                                            else return Logger.success("done!")
+                                        })
+                                    } else return Logger.error("that is an invalid category, please create the directory first")
+                                } else return Logger.error("that is an invalid category")
+                            })
+                        } else {
+                            var text = require("./template.js")[answers.type](answers.commandName, answers.commandDescription)
+                            fs.writeFile(path.join(process.cwd(), `src/interactions/${this.capitalizeFirstLetter(answers.commandName)}Command.js`), text, (err) => {
+                                if(err) return Logger.error(err.message)
+                                else return Logger.success("done!")
+                            })
+                        }
+                    })
+                }
+            } else if (type == "event") {
+                return Logger.info("coming soon")
+            } else if (type == "project") {
+                return Logger.warn("please use `makecord new` instead")
+            } else return Logger.error("`type` must be 'command', 'event' or 'project'")
+            
+        })
     }
 
     checks() {
@@ -172,5 +238,11 @@ module.exports = class app {
                 console.log(figlet.textSync("makecord", "Big Money-ne"));
             }
         }
+
+
+    }
+
+    capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
     }
 }

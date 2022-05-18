@@ -45,7 +45,14 @@ npm run dev
 npm run start
 ```
 
-Adding a command is simple, you can view the test commands for Slash Commands and Text Commands in the respective folders. Soon you will be able to add events and commands right from makecord.
+Adding a command or an event is simple, just use the create command and follow the prompts:
+
+```diff
+- Events
+coming soon
++ Command
+makecord create command
+```
 
 # Contacts
 
@@ -56,7 +63,7 @@ Want a new feature or discuss a bug? DM me on Discord or Telegram:
 
 # To Do
 
-- [ ] Add ability to create events and commands in makecord
+- [X] Add ability to create events* and commands in makecord
 - [ ] Add ability to run the bot in any enviroment from makecord
 - [ ] Add more configuration options during project creation.
 - [ ] Verbose mode
