@@ -1,6 +1,6 @@
 {
   "name": "makecord",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "config": {
     "stable": "1.0.4",
     "beta": "1b"
