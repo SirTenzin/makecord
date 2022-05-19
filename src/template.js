@@ -32,5 +32,18 @@ module.exports = class ${capitalizeFirstLetter(commandName)}Command extends Base
   }
 }
     `
+  },
+  event: (name) => {
+    return `const BaseEvent = require("../utils/structures/BaseEvent");
+
+module.exports = class InteractionCreateEvent extends BaseEvent {
+  constructor() {
+    super("${name}");
+  }
+
+  async run(client, event) {
+
+  }
+};`
   }
 } 
