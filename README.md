@@ -44,7 +44,7 @@ Adding a command or an event is simple, just use the create command and follow t
 
 ```diff
 - Events
-coming soon
+makecord create event
 + Command
 makecord create command
 ```
@@ -58,7 +58,7 @@ Want a new feature or discuss a bug? DM me on Discord or Telegram:
 
 # To Do
 
-- [X] Add ability to create events* and commands in makecord
+- [X] Add ability to create events and commands in makecord
 - [ ] Add ability to run the bot in any enviroment from makecord
 - [ ] Add more configuration options during project creation.
 - [ ] Verbose mode
