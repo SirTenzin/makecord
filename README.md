@@ -49,13 +49,6 @@ makecord create event
 makecord create command
 ```
 
-# Contacts
-
-Want a new feature or discuss a bug? DM me on Discord or Telegram:
-
-![Discord](https://img.shields.io/badge/tenzin%238951-%237289DA.svg?logo=discord&logoColor=white)
-![Telegram](https://img.shields.io/badge/SirTenzin-2CA5E0?logo=telegram&logoColor=white)
-
 # To Do
 
 - [X] Add ability to create events and commands in makecord
